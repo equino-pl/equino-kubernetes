@@ -8,4 +8,4 @@ echo "export PATH=\$HOME/.arkade/bin:\$PATH" >> ~/.zshrc
 arkade completion zsh > ~/.arkade/arkade_zsh_completion.sh
 echo "source ~/.arkade/arkade_zsh_completion.sh" >> ~/.zshrc
 # starting zsh completion
-source ~/.zsh
+source ~/.zshrc

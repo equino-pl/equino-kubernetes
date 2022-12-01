@@ -9,17 +9,17 @@ metadata:
     traefik.ingress.kubernetes.io/router.middlewares: kube-system-redirect-https@kubernetescrd
 spec:
   rules:
-    - host: dev.cloud.equino.ovh
-      http:
-        paths:
-          - path: /actracker-api/
-            pathType: Prefix
-            backend:
-              service:
-                name: actracker-api
-                port:
-                  number: 8080
+#    - host: dev.cloud.equino.ovh
+#      http:
+#        paths:
+#          - path: /actracker-api/
+#            pathType: Prefix
+#            backend:
+#              service:
+#                name: actracker-api
+#                port:
+#                  number: 8080
   tls:
     - secretName: equino-dev-tls
       hosts:
-        - dev.cloud.equino.ovh
+#        - dev.cloud.equino.ovh

@@ -1,0 +1,1 @@
+This directory contains files required to configure resources for Equino applications deploy environments.

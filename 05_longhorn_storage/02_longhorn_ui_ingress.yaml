@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: longhorn-ingress
+  namespace: longhorn-system
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    cert-manager.io/cluster-issuer: letsencrypt-staging
+    traefik.ingress.kubernetes.io/router.middlewares: kube-system-cloud-basic-auth@kubernetescrd, kube-system-redirect-https@kubernetescrd
+
+spec:
+  rules:
+    - host: longhorn.cloud.equino.ovh
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: longhorn-frontend
+                port:
+                  number: 80
+  tls:
+    - secretName: longhorn-tls
+      hosts:
+        - longhorn.cloud.equino.ovh

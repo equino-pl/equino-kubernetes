@@ -1,0 +1,19 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: registry-cors
+  namespace: equino
+spec:
+  headers:
+    accessControlAllowMethods:
+      - "GET"
+      - "OPTIONS"
+      - "HEAD"
+    accessControlAllowOriginList:
+      - "https://registry-ui.cloud.equino.ovh"
+    accessControlAllowCredentials: true
+    accessControlMaxAge: 100
+    addVaryHeader: true
+    accessControlAllowHeaders:
+      - "Authorization"
+      - "Accept"

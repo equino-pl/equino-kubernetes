@@ -2,7 +2,7 @@
 
 if [ $# -ne 2 ]
   then
-    echo "No arguments supplied. Requires username and password as arguments"
+    echo "No arguments supplied. Requires Cloud basic auth username and password as arguments"
     exit -1
 fi
 

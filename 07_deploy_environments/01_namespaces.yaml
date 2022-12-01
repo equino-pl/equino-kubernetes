@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: equino-dev
+  labels:
+    name: equino-dev
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: equino-int
+  labels:
+    name: equino-int
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: equino-prod
+  labels:
+    name: equino-prod

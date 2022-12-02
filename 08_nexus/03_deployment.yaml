@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nexus
+  namespace: equino
+  labels:
+    app: nexus
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nexus
+  template:
+    metadata:
+      labels:
+        app: nexus
+    spec:
+      volumes:
+        - name: nexus-localstorage-volume
+          persistentVolumeClaim:
+            claimName: nexus-pvc
+      containers:
+        - name: nexus
+          image: sonatype/nexus3:3.43.0 # TODO: mc upgrade to 3.43.0
+          ports:
+            - containerPort: 8081
+          volumeMounts:
+            - name: nexus-localstorage-volume
+              mountPath: /nexus-data

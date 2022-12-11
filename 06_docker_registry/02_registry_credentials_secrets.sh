@@ -17,8 +17,3 @@ data:
     $(htpasswd -nb $1 $2 | base64)
 EOF
 
-kubectl create secret docker-registry equino-registry -n equino \
---docker-server=registry.cloud.equino.ovh \
---docker-username="$1" \
---docker-password="$2" \
---docker-email=something@randomhere.com

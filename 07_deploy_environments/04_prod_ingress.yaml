@@ -12,11 +12,18 @@ spec:
 #    - host: prod.cloud.equino.ovh
 #      http:
 #        paths:
-#          - path: /actracker-api/
+#          - path: /actracker-api
 #            pathType: Prefix
 #            backend:
 #              service:
 #                name: actracker-api
+#                port:
+#                  number: 8080
+#          - path: /actracker-ui
+#            pathType: Prefix
+#            backend:
+#              service:
+#                name: actracker-ui
 #                port:
 #                  number: 8080
   tls:

@@ -1,0 +1,80 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: actracker-dev-pvc
+  namespace: equino-postgres
+  labels:
+    app: actracker-dev
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: local-path
+  resources:
+    requests:
+      storage: 5Gi
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: actracker-dev
+  namespace: equino-postgres
+  labels:
+    app: actracker-dev
+spec:
+  serviceName: "postgres"
+  replicas: 1
+  selector:
+    matchLabels:
+      app: actracker-dev
+  template:
+    metadata:
+      labels:
+        app: actracker-dev
+    spec:
+      containers:
+        - name: actracker-dev
+          image: postgres:15.1
+          envFrom:
+            - secretRef:
+                name: actracker-dev-postgres-secret
+            - secretRef:
+                name: actracker-dev-owner-secret
+            - secretRef:
+                name: actracker-dev-app-secret
+          ports:
+            - containerPort: 5432
+              name: postgresdb
+          volumeMounts:
+            - name: postgres-data
+              mountPath: /var/lib/postgresql/data
+            - name: postgres-config
+              mountPath: /var/lib/postgresql/config
+              readOnly: true
+            - name: postgres-db-init
+              mountPath: /docker-entrypoint-initdb.d
+              readOnly: true
+      volumes:
+        - name: postgres-data
+          persistentVolumeClaim:
+            claimName: actracker-dev-pvc
+        - name: postgres-config
+          configMap:
+            name: postgres-config
+        - name: postgres-db-init
+          configMap:
+            name: postgres-db-init
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: actracker-dev
+  namespace: equino-postgres
+  labels:
+    app: actracker-dev
+spec:
+  type: ClusterIP
+  ports:
+    - port: 5432
+      name: postgres
+  selector:
+    app: actracker-dev

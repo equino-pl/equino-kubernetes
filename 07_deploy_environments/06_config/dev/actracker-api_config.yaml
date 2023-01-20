@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: actracker-api-config
+  namespace: equino-dev
+data:
+  SPRING_PROFILES_ACTIVE: dev
+  actracker-api-db-postgres.dbName: actracker_dev
+  actracker-api-db-postgres.schema: actracker_dev_schema
+  actracker-api-db-postgres.host: actracker-dev.equino-postgres.svc.cluster.local
+  actracker-api-db-postgres.port: "5432"

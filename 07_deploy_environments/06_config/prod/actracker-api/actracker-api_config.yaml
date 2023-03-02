@@ -9,3 +9,6 @@ data:
   actracker-api-db-postgres.schema: actracker_prod_schema
   actracker-api-db-postgres.host: actracker-prod.equino-postgres.svc.cluster.local
   actracker-api-db-postgres.port: "5432"
+  actracker-api-publisher-rabbitmq.host: equino-cluster.equino-rabbitmq.svc.cluster.local
+  actracker-api-publisher-rabbitmq.vhost: actracker-prod
+  actracker-api-publisher-rabbitmq.port: "5672"

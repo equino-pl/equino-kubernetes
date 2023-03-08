@@ -8,8 +8,8 @@ Creating new Admin user and removing default should be the first thing to do.
 `kubectl get secret equino-cluster-default-user -o jsonpath='{.data.password}' -n equino-rabbitmq | base64 --decode`
 
 # Managing RabbitMQ clusters:
-`kubectl get rabbitmqclusters.rabbitmq.com -n equino-rabbitmq`
-`kubectl delete rabbitmqclusters.rabbitmq.com hello-world`
+`kubectl get rabbitmqclusters.rabbitmq.com -n {namespace-name}`
+`kubectl delete rabbitmqclusters.rabbitmq.com {cluster-name}`
 
 # Accessing RabbitMQ management console:
 To access RabbitMQ management console, one needs to open port forwarding to Kubernetes RabbitMQ service:

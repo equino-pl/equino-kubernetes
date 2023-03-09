@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: actracker-search-feeder-config
+  namespace: equino-prod
+data:
+  SPRING_PROFILES_ACTIVE: prod
+  actracker-search-feeder.rabbitmq.host: equino-cluster.equino-rabbitmq.svc.cluster.local
+  actracker-search-feeder.rabbitmq.vhost: actracker-prod
+  actracker-search-feeder.rabbitmq.port: "5672"

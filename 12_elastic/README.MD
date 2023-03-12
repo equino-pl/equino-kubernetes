@@ -9,7 +9,8 @@ Creating new user and removing default should be the first thing to do.
 `kubectl -n equino-elastic get secret equino-cluster-es-elastic-user -o go-template='{{.data.elastic | base64decode}}'`
 
 # Managing Elasticsearch clusters
-`kubectl -n equino-elastic get elasticsearch`
+`kubectl -n {namespace_name} get elasticsearch`
+`kubectl -n {namespace_name} delete elasticsearch {cluster_name}`
 
 # Accessing Elasticsearch HTTP endpoint
 To access Elasticsearch HTTP endpoint, one needs to open port forwarding to Kubernetes Elasticsearch service:

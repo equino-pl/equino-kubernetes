@@ -15,3 +15,7 @@ Restoring local path PVCs:
 3. Clear PVC `rm -rf ./*` (must be root)
 4. Extract content of backup: `tar -xzvf {path_to.tar.gz}`
 5. Scale deployment back to desired number of pods
+
+Disk usage cleanup methods:
+- [Jenkins caches](09_jenkins/README.MD)
+- [Docker registry](06_docker_registry/README.MD)

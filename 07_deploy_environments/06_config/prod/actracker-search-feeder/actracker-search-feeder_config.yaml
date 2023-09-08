@@ -8,4 +8,5 @@ data:
   actracker-search-feeder.rabbitmq.host: equino-cluster.equino-rabbitmq.svc.cluster.local
   actracker-search-feeder.rabbitmq.vhost: actracker-prod
   actracker-search-feeder.rabbitmq.port: "5672"
-  actracker-search-feeder.postgres.url: jdbc:postgresql://actracker-search-feeder-prod.equino-postgres.svc.cluster.local:5432/actracker_search_feeder_prod?currentSchema=actracker_search_feeder_prod_schema
+  actracker-search-feeder.postgres.url: jdbc:postgresql://actracker-search-feeder-prod.equino-postgres.svc.cluster.local:5432/actracker_search_feeder_prod
+  actracker-search-feeder.postgres.schema: actracker_search_feeder_prod_schema

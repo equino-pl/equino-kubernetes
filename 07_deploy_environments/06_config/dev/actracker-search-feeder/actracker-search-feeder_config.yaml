@@ -5,8 +5,10 @@ metadata:
   namespace: equino-dev
 data:
   SPRING_PROFILES_ACTIVE: dev
+  actracker-search-feeder.environment: dev
   actracker-search-feeder.rabbitmq.host: equino-cluster.equino-rabbitmq.svc.cluster.local
   actracker-search-feeder.rabbitmq.vhost: actracker-dev
   actracker-search-feeder.rabbitmq.port: "5672"
   actracker-search-feeder.postgres.url: jdbc:postgresql://actracker-search-feeder-dev.equino-postgres.svc.cluster.local:5432/actracker_search_feeder_dev
   actracker-search-feeder.postgres.schema: actracker_search_feeder_dev_schema
+  actracker-search-feeder.elasticsearch.url: equino-cluster-es-internal-http.equino-elastic.svc.cluster.local:9200

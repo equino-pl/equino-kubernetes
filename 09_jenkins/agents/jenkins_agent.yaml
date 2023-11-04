@@ -21,6 +21,8 @@ spec:
           cpu: "2"
           memory: "2Gi"
       env:
+        - name: "AGENT_WORKDIR"
+          value: "/home/jenkins"
         - name: "JENKINS_AGENT_WORKDIR"
           value: "/home/jenkins"
         - name: DOCKER_HOST
@@ -38,6 +40,8 @@ spec:
       imagePullPolicy: Always
       tty: true
       env:
+        - name: "AGENT_WORKDIR"
+          value: "/home/jenkins"
         - name: "JENKINS_AGENT_WORKDIR"
           value: "/home/jenkins"
         - name: DOCKER_TLS_CERTDIR

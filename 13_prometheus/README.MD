@@ -1,0 +1,1 @@
+Inspired by: https://adamtheautomator.com/prometheus-kubernetes/

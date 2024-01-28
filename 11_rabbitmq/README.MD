@@ -14,3 +14,6 @@ Creating new Admin user and removing default should be the first thing to do.
 # Accessing RabbitMQ management console:
 To access RabbitMQ management console, one needs to open port forwarding to Kubernetes RabbitMQ service:
 `kubectl port-forward services/equino-cluster -n equino-rabbitmq 15672:15672`
+
+RabbitMQ is available under:
+http://localhost:15672

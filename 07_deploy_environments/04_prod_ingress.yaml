@@ -12,7 +12,7 @@ spec:
     - host: prod.cloud.equino.ovh
       http:
         paths:
-          - path: /actracker-api
+          - path: /actracker-api/api
             pathType: Prefix
             backend:
               service:

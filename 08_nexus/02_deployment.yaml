@@ -21,7 +21,7 @@ spec:
             claimName: nexus-pvc
       containers:
         - name: nexus
-          image: sonatype/nexus3:3.60.0
+          image: sonatype/nexus3:3.72.0
           ports:
             - containerPort: 8081
           volumeMounts:

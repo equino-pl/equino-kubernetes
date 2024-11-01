@@ -5,6 +5,7 @@ metadata:
   namespace: equino-prod
 data:
   SPRING_PROFILES_ACTIVE: prod
+  actracker-api.environment: prod
   actracker-api-db-postgres.dbName: actracker_prod
   actracker-api-db-postgres.schema: actracker_prod_schema
   actracker-api-db-postgres.host: actracker-prod.equino-postgres.svc.cluster.local

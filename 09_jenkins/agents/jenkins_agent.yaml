@@ -16,10 +16,10 @@ spec:
       resources:
         requests:
           cpu: "0.5"
-          memory: "1800Mi"
+          memory: "1Gi"
         limits:
           cpu: "2"
-          memory: "2Gi"
+          memory: "1500Mi"
       env:
         - name: "AGENT_WORKDIR"
           value: "/home/jenkins"
@@ -36,7 +36,7 @@ spec:
       resources:
         limits:
           cpu: "0.2"
-          memory: "250Mi"
+          memory: "500Mi"
       imagePullPolicy: Always
       tty: true
       env:

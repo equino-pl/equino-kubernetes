@@ -42,7 +42,7 @@ error: You must be logged in to the server (the server has asked for the client 
 
 Certificates are automatically refreshed on the server and changes are reflected in the kubectl config on the server
 (`/etc/rancher/k3s/k3s.yml`).
-Certificates values should be copied to the local kube config to work correctly (`.~/kube/config`).
+Certificates values should be copied to the local kube config to work correctly (`~/.kube/config`).
 The same changes must apply to all scripts which use kube config (Jenkins).
 
 ## DNS not working

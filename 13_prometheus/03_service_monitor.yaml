@@ -1,0 +1,14 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: prometheus-service-monitor
+  namespace: equino-prometheus
+spec:
+  endpoints:
+    - path: /info/prometheus
+      port: http
+  namespaceSelector:
+    any: true
+  selector:
+    matchLabels:
+      metrics: prometheus

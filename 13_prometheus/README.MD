@@ -1,12 +1,12 @@
 Inspired
-by: [this](https://medium.com/@joudwawad/comprehensive-beginners-guide-to-kube-prometheus-in-kubernetes-monitoring-alerts-integration-4ade4fa8fa8c)
+by: [this](https://adamtheautomator.com/prometheus-kubernetes/)
 and [this](https://medium.com/@joudwawad/comprehensive-beginners-guide-to-kube-prometheus-in-kubernetes-monitoring-alerts-integration-4ade4fa8fa8c)
 article.
 
 # How it works
 
-In `prometheus` namespace, next to the Prometheus itself and Grafana, there is a `PodMonitor` installed, which scrapes
-metrics from every pod labeled with `metrics: prometheus`.
+In `equino-prometheus` namespace, for each application, there is a `ServiceMonitor` installed, which scrapes
+metrics from every pod matching specific `app` label.
 
 # Default username/password:
 

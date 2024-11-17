@@ -1,0 +1,9 @@
+prometheus:
+  prometheusSpec:
+    podMonitorSelectorNilUsesHelmValues: false
+    serviceMonitorSelectorNilUsesHelmValues: false
+grafana:
+  enabled: true
+  persistence:
+    enabled: true
+    type: statefulset

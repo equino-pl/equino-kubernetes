@@ -1,0 +1,14 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: actracker-api-service-monitor
+  namespace: equino-prometheus
+spec:
+  endpoints:
+    - path: /actracker-api/info/prometheus
+      port: http
+  namespaceSelector:
+    any: true
+  selector:
+    matchLabels:
+      app: actracker-api

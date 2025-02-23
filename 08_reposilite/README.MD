@@ -4,4 +4,6 @@ Inspired by [Reposilite](https://reposilite.com/guide/about) ([Installation](htt
 Currently only adding users with 'm' (MANAGER) permissions is allowed ([Tokens](https://reposilite.com/guide/tokens)) 
 
 TODO:
+- Donate!
+- Contribute!
 - Test autoscaling (download and see helm values)

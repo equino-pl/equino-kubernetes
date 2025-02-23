@@ -13,19 +13,19 @@ ingress:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     traefik.ingress.kubernetes.io/router.middlewares: kube-system-redirect-https@kubernetescrd
   hosts:
-    - host: reposilite.cloud.equino.ovh
+    - host: maven.cloud.equino.ovh
       paths:
         - path: /
           pathType: Prefix
   tls:
   - secretName: reposilite-tls
     hosts:
-      - reposilite.cloud.equino.ovh
+      - maven.cloud.equino.ovh
 
 ## Resources
 resources:
   requests:
-    cpu: 0.2
+    cpu: 0.1
     memory: 128Mi
   limits:
     cpu: 0.5

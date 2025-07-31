@@ -15,3 +15,7 @@ After setting up test application, it can be removed with `kubectl delete namesp
 
 Resources:
 https://cert-manager.io/docs/reference/api-docs/#cert-manager.io/v1
+
+# TODO 
+
+Shouldn't `cloud-basic-auth-secret` and `cloud-basic-auth-secret` be moved to `test` namespace? Are they used anywhere else than test application?

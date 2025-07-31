@@ -3,3 +3,6 @@ Learnt thanks to tutorial https://itnext.io/the-ultimate-guide-to-building-your-
 
 Scripts were not tested, commands were run one by one.
 
+# TODO 
+
+Install helm using brew, not arkade

@@ -4,9 +4,10 @@ https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/
 The required Bearer Token, required for dashboard authorization, can be generated with:
 `kubectl -n kubernetes-dashboard create token admin-user`
 
-To access the dashboard open kubernetes proxy:
-`kubectl proxy`
+To access the dashboard open kubernetes port forward:
+`kubectl -n kubernetes-dashboard port-forward svc/kubernetes-dashboard-kong-proxy 8443:443`
 
 Dashboard is available under:
-http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
+https://localhost:8443
+
 

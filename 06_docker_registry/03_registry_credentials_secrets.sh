@@ -11,7 +11,7 @@ apiVersion: v1
 kind: Secret
 metadata:
   name: registry-basic-auth-secret
-  namespace: equino
+  namespace: equino-docker-registry
 data:
   users: |2
     $(htpasswd -nb $1 $2 | base64)

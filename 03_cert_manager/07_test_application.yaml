@@ -43,7 +43,7 @@ metadata:
   name: whoami-tls-ingress
   namespace: test
   annotations:
-    kubernetes.io/ingress.class: traefik
+    spec.ingressClassName: traefik
     cert-manager.io/cluster-issuer: letsencrypt-staging
     traefik.ingress.kubernetes.io/router.middlewares: kube-system-redirect-https@kubernetescrd, kube-system-cloud-basic-auth@kubernetescrd
 spec:

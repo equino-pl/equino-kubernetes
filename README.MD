@@ -68,7 +68,3 @@ local-path-provisioner   1/1     1            1           667d
 metrics-server           1/1     1            1           667d
 traefik                  1/1     1            1           667d
 ```
-## Warning: annotation "kubernetes.io/ingress.class" is deprecated, please use 'spec.ingressClassName' instead
-
-Unfortunately, using annotation `spec.ingressClassName` causes cert manager's issuer `letsencrypt-prod` failing. 
-After few attempts issuing certificate for ingress is blocked for 3 days.

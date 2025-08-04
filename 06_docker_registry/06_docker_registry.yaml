@@ -45,9 +45,9 @@ metadata:
   name: registry-ingress
   namespace: equino-docker-registry
   annotations:
-    kubernetes.io/ingress.class: traefik
+    spec.ingressClassName: traefik
     cert-manager.io/cluster-issuer: letsencrypt-staging
-    traefik.ingress.kubernetes.io/router.middlewares: equino-registry-cors@kubernetescrd, equino-registry-basic-auth@kubernetescrd
+    traefik.ingress.kubernetes.io/router.middlewares: kube-system-redirect-https@kubernetescrd, equino-docker-registry-registry-cors@kubernetescrd, equino-docker-registry-registry-basic-auth@kubernetescrd
 spec:
   rules:
     - host: registry.cloud.equino.ovh

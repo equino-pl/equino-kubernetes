@@ -11,7 +11,7 @@ apiVersion: v1
 kind: Secret
 metadata:
   name: cloud-basic-auth-secret
-  namespace: kube-system
+  namespace: test
 data:
   users: |2
     $(htpasswd -nb $1 $2 | base64)

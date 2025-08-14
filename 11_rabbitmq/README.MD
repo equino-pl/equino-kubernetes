@@ -1,6 +1,10 @@
 # Install instructions:
 https://www.rabbitmq.com/kubernetes/operator/quickstart-operator.html
 
+# Operator documentation
+
+https://www.rabbitmq.com/kubernetes/operator/operator-overview
+
 # Default username/password:
 The default username and password must be obtained from secrets after cluster creation.
 Creating new Admin user and removing default should be the first thing to do.
@@ -10,6 +14,7 @@ Creating new Admin user and removing default should be the first thing to do.
 # Managing RabbitMQ clusters:
 `kubectl get rabbitmqclusters.rabbitmq.com -n {namespace-name}`
 `kubectl delete rabbitmqclusters.rabbitmq.com {cluster-name}`
+`kubectl edit rabbitmqclusters.rabbitmq.com {cluster-name}` (including replicas)
 
 # Accessing RabbitMQ management console:
 To access RabbitMQ management console, one needs to open port forwarding to Kubernetes RabbitMQ service:

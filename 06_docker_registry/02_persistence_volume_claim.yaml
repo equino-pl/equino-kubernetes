@@ -2,7 +2,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: registry-pvc
-  namespace: equino
+  namespace: equino-docker-registry
 spec:
   accessModes:
     - ReadWriteOnce

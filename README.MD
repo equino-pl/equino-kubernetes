@@ -23,9 +23,9 @@ Restoring local path PVCs:
 
 Disk usage cleanup methods:
 
-- [Jenkins caches](09_jenkins/README.MD)
-- [Docker registry](06_docker_registry/README.MD)
-- [Removing unused images](01_node_environment_setup/README.MD)
+- [Jenkins caches](09_jenkins/README.MD#disk-space-cleanup)
+- [Docker registry](06_docker_registry/README.MD#disk-space-cleanup)
+- [Removing unused images](01_node_environment_setup/README.MD#disk-space-cleanup)
 
 # Common problems
 

@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: registry
-  namespace: equino
+  namespace: equino-docker-registry
 spec:
   type: ClusterIP
   ports:
@@ -15,7 +15,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: registry
-  namespace: equino
+  namespace: equino-docker-registry
 spec:
   selector:
     matchLabels:
@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
         - name: registry
-          image: registry:2.8.1
+          image: registry:3.0.0
           ports:
             - containerPort: 5000
           volumeMounts:
@@ -43,11 +43,11 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: registry-ingress
-  namespace: equino
+  namespace: equino-docker-registry
   annotations:
-    kubernetes.io/ingress.class: traefik
-    cert-manager.io/cluster-issuer: letsencrypt-prod
-    traefik.ingress.kubernetes.io/router.middlewares: equino-registry-cors@kubernetescrd, equino-registry-basic-auth@kubernetescrd
+    spec.ingressClassName: traefik
+    cert-manager.io/cluster-issuer: letsencrypt-staging
+    traefik.ingress.kubernetes.io/router.middlewares: kube-system-redirect-https@kubernetescrd, equino-docker-registry-registry-cors@kubernetescrd, equino-docker-registry-registry-basic-auth@kubernetescrd
 spec:
   rules:
     - host: registry.cloud.equino.ovh

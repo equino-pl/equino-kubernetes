@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: jenkins
-  namespace: equino
+  namespace: equino-jenkins
 spec:
   replicas: 1
   selector:
@@ -19,7 +19,7 @@ spec:
       serviceAccountName: jenkins-admin
       containers:
         - name: jenkins
-          image: jenkins/jenkins:2.503
+          image: jenkins/jenkins:2.521
           resources:
             limits:
               memory: "2Gi"

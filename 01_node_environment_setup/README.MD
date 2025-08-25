@@ -2,6 +2,8 @@ Inspired by https://k3s.rocks/install-setup/
 
 `open-iscsi` and `wireguard` has not been applied comparing to original solution.
 
+# Disk space cleanup
+
 K3s uses containerd for container runtime. It comes with crictl - which provides some containerd functionality.
 Following command cleans unused images that are stored in the cache (inside /var, at least for the vanilla installation
 of K3s):

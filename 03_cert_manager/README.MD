@@ -2,7 +2,7 @@ Inspired by https://k3s.rocks/https-cert-manager-letsencrypt/
 
 Email is optional according to API documentation (https://cert-manager.io/docs/reference/api-docs/#acme.cert-manager.io/v1) and was disabled currently.
 
-`letsencrypt-staging` cert issuer should be used for testing, while `letsencrypt-prod` issuer should be used as a final solution.
+`letsencrypt-staging` cert issuer should be used for testing, while `letsencrypt-staging` issuer should be used as a final solution.
 
 Comparing to the guide, the namespace of `redirect-https` Middleware changed from `default` to `kube-system` (`04_traefik_https_redirect_middleware.yaml`)
 The consequence of such change is a change in annotations of `whoami-tls-ingress` defined in `05-test-application.yaml`

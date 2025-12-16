@@ -9,3 +9,10 @@ These are podTemplates which should be added to the Kubernetes cloud in the UI.
 # Disk space cleanup
 
 Directories `/.cache` and `/.gradle/caches` grow rapidly. It's safe to clear their content from both: controller and agents.
+
+# Build queue cleanup
+
+Go to `Manage Jenkins -> Script Console` and run the following script:
+```
+Jenkins.instance.queue.clear()
+```

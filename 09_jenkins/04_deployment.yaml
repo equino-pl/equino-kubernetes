@@ -19,7 +19,7 @@ spec:
       serviceAccountName: jenkins-admin
       containers:
         - name: jenkins
-          image: jenkins/jenkins:2.521
+          image: jenkins/jenkins:2.542
           resources:
             limits:
               memory: "2Gi"
